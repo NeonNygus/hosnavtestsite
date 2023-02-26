@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container" id="start-page">
+      <div style="text-align: center; max-height: 400px; margin-top: 158px">
+        <p style="margin: 0px">Witaj</p>
+        <p style="margin: 0px">w</p>
+        <p
+          style="
+            font-family: 'Futura';
+            font-size: 125px;
+            margin: 0px;
+            font-weight: 200;
+          "
+        >
+          HOSNAV!
+        </p>
+      </div>
+      <div style="text-align: center; margin-top: 150px">
+        <button class="button" id="linkScanQR">Skanuj kod QR</button>
+        <button class="button" id="linkChooseClinic">Wybierz klinikę</button>
+      </div>
+    </div>
+    <div class="container hidden" id="choose-city">
+      <div style="height: 50vh">
+        <p>Wybierz miasto</p>
+        <select
+          class="selector"
+          name="city"
+          id="chooseCity"
+          onchange="chosenCity()"
+        >
+          <option selected disabled>. . .</option>
+          <option value="Rzeszów">Rzeszów</option>
+        </select>
+      </div>
+      <div>
+        <p>Znajdź na mapie</p>
+        <img src="map.jpg" alt="" />
+      </div>
+    </div>
+    <div class="container hidden" id="choose-hospital">
+      <div>
+        <p>Moje miasto</p>
+        <div style="height: 40vh">
+          <p>Wybierz klinikę</p>
+          <select
+            class="selector"
+            name="city"
+            id="chooseCity"
+            onchange="chosenCity()"
+          >
+            <option selected disabled>. . .</option>
+            <option value="Rzeszów">Rzeszów</option>
+          </select>
+        </div>
+        <div>
+          <p>Znajdź na mapie</p>
+          <img src="map.jpg" alt="" />
+        </div>
+      </div>
+      <div></div>
+    </div>
+    <div class="container hidden" id="choose-room" style="max-height: 56vh">
+      <div><p>Mój szpital</p></div>
+      <div style="height: 20vh">
+        <p>Wybierz lekarza</p>
+        <select
+          class="selector"
+          name="city"
+          id="chooseCity"
+          onchange="chosenCity()"
+        >
+          <option selected disabled>. . .</option>
+          <option value="Rzeszów">Rzeszów</option>
+        </select>
+      </div>
+      <div style="height: 27vh">
+        <p>Filtruj po specjalizacji</p>
+        <select
+          class="selector"
+          name="city"
+          id="chooseCity"
+          onchange="chosenCity()"
+        >
+          <option selected disabled>. . .</option>
+          <option value="Rzeszów">Rzeszów</option>
+        </select>
+      </div>
+    </div>
+    <div class="map hidden" id="track-page">
+      <div>
+        <img src="here.jpg" alt="" />
+      </div>
+    </div>
+    <div class="container hidden" id="success-page">
+      <div style="text-align: center; padding-top: 23%">
+        <img
+          src="success.png"
+          alt=""
+          style="filter: drop-shadow(16px 26px 8px #0000003b)"
+        />
+      </div>
+      <div style="text-align: center; padding-top: 63px">
+        <p>Dotarłeś do celu!</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
