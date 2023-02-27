@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Smokum&display=swap");
-@media only screen and (mix-width: 720px) {
+@media only screen and (min-width: 720px) {
 * {
   box-sizing: border-box;
   margin: 0;
