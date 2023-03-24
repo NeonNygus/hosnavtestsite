@@ -17,8 +17,8 @@ const ctx = canvas.getContext("2d");
     accY.innerHTML = e.currentTarget.y;
     vx = (e.currentTarget.x) / 2;
     vy = (e.currentTarget.y) / 2;
-   trackX += e.currentTarget.x;
-   trackY += e.currentTarget.y;
+   trackX += (e.currentTarget.x) / 10;
+   trackY += (e.currentTarget.y) / 10;
     ptrackX.innerHTML = trackX;
     ptrackY.innerHTML = trackY;
   };
@@ -26,8 +26,8 @@ const ctx = canvas.getContext("2d");
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x = 130 + trackX;
-    y = 130 + trackY;
+    x = 130 + (trackX * 10);
+    y = 130 + (trackY * 10);
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
