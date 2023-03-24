@@ -12,7 +12,7 @@ try {
     }
   };
   accelerometer.onreading = (e) => {
-    console.log(e);
+    console.log(e.currentTarget);
   };
   accelerometer.start();
 } catch (error) {
