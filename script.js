@@ -9,8 +9,6 @@ const ctx = canvas.getContext("2d");
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x += vx;
-    y += vy;
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
