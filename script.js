@@ -6,15 +6,7 @@ let x = 100;
 let y = 100;
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
-function update()
-{
-    ctx.clearRect(0,0,canvas.width, canvas.height);
-    x += 1;
-    y += 1;
-    ctx.fillRect(x,y,50,50);
-    requestAnimationFrame(update);
-}
- update();
+
 let trackX = 0;
     let trackY = 0;
   accelerometer = new Accelerometer({ frequency: 6 });
@@ -31,3 +23,12 @@ let trackX = 0;
     ptrackY.innerHTML = trackY;
   };
   accelerometer.start();
+function update()
+{
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    x = 130 + trackX;
+    y = 130 + trackY;
+    ctx.fillRect(x,y,50,50);
+    requestAnimationFrame(update);
+}
+ update();
