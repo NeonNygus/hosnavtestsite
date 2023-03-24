@@ -2,9 +2,11 @@ const accX= document.querySelector("#x");
 const accY= document.querySelector("#y");
 let x = 20;
 let y = 20;
+let vx = 1;
+let vy = 1;
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
-function update(vx,vy)
+function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
     x += vx;
@@ -21,7 +23,7 @@ function update(vx,vy)
     accY.innerHTML = e.currentTarget.y;
     const x = e.currentTarget.x;
     const y = e.currentTarget.y;
-    update(1,1);
+    update();
   };
   accelerometer.start();
 
