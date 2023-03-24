@@ -8,6 +8,6 @@ sensor.start();
 
 function handleSensor(e){
       console.log(e);
-      //x.innerHTML = dist[0];
+      x.innerHTML = e;
    // y.innerHTML = dist[1];
 }
