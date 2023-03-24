@@ -7,9 +7,9 @@ let y = 100;
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-  let trackX = 0;
-  let trackY = 0;
-  accelerometer = new Accelerometer({ frequency: 6 });
+let trackX = 0;
+    let trackY = 0;
+  accelerometer = new Accelerometer({ frequency: 120 });
   accelerometer.onreading = (e) => {
     
     console.log(e.currentTarget.x);
@@ -17,8 +17,8 @@ const ctx = canvas.getContext("2d");
     accY.innerHTML = e.currentTarget.y;
     vx = (e.currentTarget.x) / 2;
     vy = (e.currentTarget.y) / 2;
-   trackX += (e.currentTarget.x) / 10;
-   trackY += (e.currentTarget.y) / 10;
+   trackX += (e.currentTarget.x) / 120;
+   trackY += (e.currentTarget.y) / 120;
     ptrackX.innerHTML = trackX;
     ptrackY.innerHTML = trackY;
   };
@@ -26,8 +26,8 @@ const ctx = canvas.getContext("2d");
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x = 130 + (trackX * 10);
-    y = 130 + (trackY * 10);
+    x = 130 + (trackX * 100);
+    y = 130 + (trackY * 100);
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
