@@ -1,8 +1,9 @@
 const x= document.querySelector("#x");
 const y= document.querySelector("#y");
+const z= document.querySelector("#z");
 let accelerometer = null;
 try {
-  accelerometer = new Accelerometer({ frequency: 10 });
+  accelerometer = new Accelerometer({ frequency: 20 });
   accelerometer.onerror = (event) => {
     // Handle runtime errors.
     if (event.error.name === 'NotAllowedError') {
@@ -13,6 +14,9 @@ try {
   };
   accelerometer.onreading = (e) => {
     console.log(e.currentTarget);
+    x.innerHTML = e.currentTarget.x;
+    y.innerHTML = e.currentTarget.y;
+    z.innerHTML = e.currentTarget.z;
   };
   accelerometer.start();
 } catch (error) {
