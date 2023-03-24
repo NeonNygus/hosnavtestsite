@@ -1,9 +1,20 @@
-const x= document.querySelector("#x");
-const y= document.querySelector("#y");
-const z= document.querySelector("#z");
+const accX= document.querySelector("#x");
+const accY= document.querySelector("#y");
 let accelerometer = null;
+let x = 20;
+let y = 20;
+function update(vx,vy)
+{
+    ctx.clearRect(0,0,canvas.width, canvas.height);
+    x += vx;
+    y += vy;
+    ctx.fillRect(x,y,50,50);
+    requestAnimationFrame(update);
+}
+
+
 try {
-  accelerometer = new Accelerometer({ frequency: 20 });
+  accelerometer = new Accelerometer({ frequency: 10 });
   accelerometer.onerror = (event) => {
     // Handle runtime errors.
     if (event.error.name === 'NotAllowedError') {
@@ -13,10 +24,12 @@ try {
     }
   };
   accelerometer.onreading = (e) => {
-    console.log(e.currentTarget.x + " " + e.currentTarget.y + " " + e.currentTarget.z);
-    x.innerHTML = e.currentTarget.x;
-    y.innerHTML = e.currentTarget.y;
-    z.innerHTML = e.currentTarget.z;
+    console.log(e.currentTarget.x);
+    accX.innerHTML = e.currentTarget.x;
+    accY.innerHTML = e.currentTarget.y;
+    const x = e.currentTarget.x;
+    const y = e.currentTarget.y;
+    update(x,y);
   };
   accelerometer.start();
 } catch (error) {
@@ -29,3 +42,8 @@ try {
     throw error;
   }
 }
+const canvas = document.querySelector("#canvas");
+const ctx = canvas.getContext("2d");
+
+
+
