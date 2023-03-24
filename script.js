@@ -7,8 +7,8 @@ let y = 100;
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-let trackX = 0;
-    let trackY = 0;
+  let trackX = 0;
+  let trackY = 0;
   accelerometer = new Accelerometer({ frequency: 6 });
   accelerometer.onreading = (e) => {
     
@@ -17,8 +17,8 @@ let trackX = 0;
     accY.innerHTML = e.currentTarget.y;
     vx = (e.currentTarget.x) / 2;
     vy = (e.currentTarget.y) / 2;
-   trackX += (e.currentTarget.x) / 10;
-   trackY += (e.currentTarget.y) / 10;
+   trackX += e.currentTarget.x;
+   trackY += e.currentTarget.y;
     ptrackX.innerHTML = trackX;
     ptrackY.innerHTML = trackY;
   };
