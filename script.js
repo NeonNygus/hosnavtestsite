@@ -1,5 +1,3 @@
-const { Accelerometer } = require("motion-sensors-polyfill");
-
 const x= document.querySelector("#x");
 const y= document.querySelector("#y");
 const sensor = new Accelerometer({frequency: 60});
