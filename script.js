@@ -1,7 +1,5 @@
 const accX= document.querySelector("#x");
 const accY= document.querySelector("#y");
-let x = 100;
-let y = 100;
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
@@ -15,10 +13,9 @@ const ctx = canvas.getContext("2d");
     let vy = (e.currentTarget.y) / 2;
     function update()
     {
-        console.log(dupa);
         ctx.clearRect(0,0,canvas.width, canvas.height);
-        x = vx;
-        y = vy;
+        let x = vx;
+        let y = vy;
         ctx.fillRect(x,y,50,50);
         setInterval(requestAnimationFrame(update),1000);
     }
