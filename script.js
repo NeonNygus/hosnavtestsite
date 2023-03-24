@@ -13,7 +13,7 @@ try {
     }
   };
   accelerometer.onreading = (e) => {
-    console.log(e.currentTarget);
+    console.log(e.currentTarget.x);
     x.innerHTML = e.currentTarget.x;
     y.innerHTML = e.currentTarget.y;
     z.innerHTML = e.currentTarget.z;
