@@ -21,8 +21,8 @@ function update()
     console.log(e.currentTarget.x);
     accX.innerHTML = e.currentTarget.x;
     accY.innerHTML = e.currentTarget.y;
-    vx = (e.currentTarget.x) / 2;
-    vy = (e.currentTarget.y) / 2;
+    vx = 0;
+    vy = 0;
     update();
   };
   accelerometer.start();
