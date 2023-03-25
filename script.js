@@ -1,5 +1,7 @@
 const accX= document.querySelector("#x");
 const accY= document.querySelector("#y");
+const pspeedX = document.querySelector("#speedX");
+const pspeedY = document.querySelector("#speedY");
 const ptrackX = document.querySelector("#trackX");
 const ptrackY = document.querySelector("#trackY");
 let x = 100;
@@ -9,25 +11,27 @@ const ctx = canvas.getContext("2d");
 
 let speedX = 0;
     let speedY = 0;
-  accelerometer = new LinearAccelerationSensor({ frequency: 120 });
+    let trackX = 0;
+  let trackY = 0;
+  accelerometer = new LinearAccelerationSensor({ frequency: 60 });
   accelerometer.onreading = (e) => {
     
     console.log(e.currentTarget.x);
     accX.innerHTML = e.currentTarget.x;
     accY.innerHTML = e.currentTarget.y;
-    vx = (e.currentTarget.x) / 2;
-    vy = (e.currentTarget.y) / 2;
-   speedX += (e.currentTarget.x) / 120;
-   speedY += (e.currentTarget.y) / 120;
-    ptrackX.innerHTML = speedX;
-    ptrackY.innerHTML = speedY;
+   speedX += (e.currentTarget.x) / 60;
+   speedY += (e.currentTarget.y) / 60;
+    pspeedX.innerHTML = speedX;
+    pspeedY.innerHTML = speedY;
+    trackX += (speedX) / 60;
+   trackY += (speedY) / 60;
   };
   accelerometer.start();
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x = 130 + speedX;
-    y = 130 + speedY;
+    x = 130 + trackX;
+    y = 130 + trackY;
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
