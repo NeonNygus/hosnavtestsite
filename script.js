@@ -25,6 +25,8 @@ let speedX = 0;
     pspeedY.innerHTML = speedY;
     trackX += (speedX) / 60;
    trackY += (speedY) / 60;
+   ptrackX.innerHTML = trackX;
+    ptrackY.innerHTML = trackY;
   };
   accelerometer.start();
 function update()
