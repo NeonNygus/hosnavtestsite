@@ -32,8 +32,8 @@ let speedX = 0;
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x = 130 + (trackX * 5);
-    y = 130 + (trackY * 5);
+    x = 130 + (trackX * 12);
+    y = 130 + (trackY * 12);
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
