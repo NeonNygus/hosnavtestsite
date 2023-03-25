@@ -13,18 +13,18 @@ let speedX = 0;
     let speedY = 0;
     let trackX = 0;
   let trackY = 0;
-  accelerometer = new LinearAccelerationSensor({ frequency: 60 });
+  accelerometer = new LinearAccelerationSensor({ frequency: 120 });
   accelerometer.onreading = (e) => {
     
     console.log(e.currentTarget.x);
     accX.innerHTML = e.currentTarget.x;
     accY.innerHTML = e.currentTarget.y;
-   speedX += (e.currentTarget.x) / 60;
-   speedY += (e.currentTarget.y) / 60;
+   speedX += (e.currentTarget.x) / 120;
+   speedY += (e.currentTarget.y) / 120;
     pspeedX.innerHTML = speedX;
     pspeedY.innerHTML = speedY;
-    trackX += (speedX) / 60;
-   trackY += (speedY) / 60;
+    trackX += (speedX) / 120;
+   trackY += (speedY) / 120;
    ptrackX.innerHTML = trackX;
     ptrackY.innerHTML = trackY;
   };
@@ -32,8 +32,8 @@ let speedX = 0;
 function update()
 {
     ctx.clearRect(0,0,canvas.width, canvas.height);
-    x = 130 + trackX;
-    y = 130 + trackY;
+    x = 130 + (trackX * 5);
+    y = 130 + (trackY * 5);
     ctx.fillRect(x,y,50,50);
     requestAnimationFrame(update);
 }
